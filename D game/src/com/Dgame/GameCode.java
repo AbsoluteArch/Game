@@ -29,6 +29,7 @@ public class GameCode extends JPanel  implements Runnable{
 	
 	
 	//****ENGINE****
+	
 	public Rectangle floor;
 	
 	public int keyRight = KeyEvent.VK_RIGHT;
@@ -43,7 +44,7 @@ public class GameCode extends JPanel  implements Runnable{
 	public int movementSpeed = 0;
 	public int movementFrame = 0;
 	
-	
+	private JLabel lab;
 	public boolean objectDefine = false;
 	public boolean falling = false;
 	public boolean running = true;
@@ -53,33 +54,14 @@ public class GameCode extends JPanel  implements Runnable{
 	public int floorheight = 80;
 	public int fps= 1000;
 	
+	
 	//**************
-	
-	
-	
-	
-	
-	//****PLAYER****
-	
-	public void object() {
-		add(new JLabel(new ImageIcon("jump1.png")));
-	
-	}
-	
-	
-	//***************
-	
-	
-	
-
-	
-	
 	
 
 	public Thread game;
 	
 	public GameCode(MainScreen f){
-		setBackground(Color.black);
+		setBackground(Color.white);
 		defineObjects();
 		game = new Thread (this);
 		game.start();
@@ -87,6 +69,7 @@ public class GameCode extends JPanel  implements Runnable{
 		}
 //****LEVEL*************
 	void defineObjects(){
+		
 		floor = new Rectangle(-10, MainClass.height-floorheight, MainClass.width+10, floorheight);
 		
 		objectDefine = true;
